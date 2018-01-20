@@ -10,6 +10,7 @@ V. python: 3,6
 soluzione proposta per il problema n2 della prova in itinere di ingegneria degli algoritmi (2017/2018)
 trova il nodo che è medio per la maggior parte dei cammini più brevi tra tutte le coppie di un grafo
 """
+import time
 
 
 def camminiMinBFS(graph, inizio, fine):
@@ -76,7 +77,11 @@ def mediodeimedi(list):
             moda=list[i]
     return moda
 
-
+def prova(graph):
+    inizio = time.clock()
+    A = mediumNode(graph)
+    tempoTrascorso = time.clock() - inizio
+    print('il nodo medio per il maggior numero di coppie è:',mediodeimedi(A),' trovato in:',tempoTrascorso,'sec')
 
 if __name__ == '__main__':
 
@@ -90,9 +95,9 @@ if __name__ == '__main__':
              'G': ['C','D','H'],
              'H': ['D','G']}
 
+    prova(graph)
 
-    A=mediumNode(graph)
-    print ('il nodo medio per il maggior numero di coppie è:',mediodeimedi(A))
+
 
 
 
