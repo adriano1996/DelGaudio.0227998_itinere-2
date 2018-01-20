@@ -85,18 +85,33 @@ def prova(graph):
 
 if __name__ == '__main__':
 
-   #grafo di prova dato come dizionario chiave: valore (il valore è la lista dei nodi adiacenti)
+    #grafo di prova dato come dizionario chiave: valore (il valore è la lista dei nodi adiacenti)
     graph = {'A': ['B', 'C', 'E'],
              'B': ['A', 'D', 'E'],
              'C': ['A', 'F', 'G'],
-             'D': ['B','E','G','H'],
+             'D': ['B','E'],
              'E': ['A', 'B', 'D'],
              'F': ['C'],
-             'G': ['C','D','H'],
-             'H': ['D','G']}
+             'G': ['C']}
+
+    graph2 = {'A': ['B'],
+              'B': ['A','D'],
+              'C': ['D'],
+              'D': ['B','C','E'],
+              'E': ['D']}
+    graph3 = {'A': ['B','C','D','H','I'],
+              'B': ['A','C','D','E','F'],
+              'C': ['A','B','F','H'],
+              'D': ['A','B','E','I'],
+              'E': ['B','D','G'],
+              'F': ['B','C','G','H'],
+              'G': ['F','E'],
+              'H': ['A','C','F','I'],
+              'I': ['A','D','H']}
 
     prova(graph)
-
+    prova(graph2)
+    prova(graph3)
 
 
 
